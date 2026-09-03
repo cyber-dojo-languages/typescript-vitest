@@ -1,0 +1,13 @@
+{
+  "devDependencies": {
+    "@eslint/js": "*",
+    "@types/node": "*",
+    "eslint": "*",
+    "eslint-config-prettier": "*",
+    "eslint-plugin-prettier": "*",
+    "prettier": "*",
+    "typescript": "*",
+    "typescript-eslint": "*",
+    "vitest": "*"
+  }
+}
