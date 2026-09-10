@@ -24,5 +24,5 @@ check_version()
   fi
 }
 
-check_version vitest     4.1.11 'npx vitest --version'
-check_version typescript 6.0.3  'npx tsc --version'
+check_version vitest     5.0 'npx vitest --version'
+check_version typescript 6.0 'npx tsc --version'
