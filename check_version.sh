@@ -6,8 +6,11 @@ readonly JSON=`cat ${MY_DIR}/docker/image_name.json`
 readonly IMAGE_NAME="${BASH_REMATCH[1]}"
 
 # Both versions are checked because the start-point's manifest.json states
-# both, and docker/package.json asks for "*" of each. A floating dependency
-# would otherwise move underneath a display_name that says otherwise.
+# both, and docker/install.sh names no version for either. A floating
+# dependency would otherwise move underneath a display_name that says
+# otherwise. The compiler comes from the base image rather than from here,
+# which is all the more reason to check it: nothing else in this repo would
+# notice the base moving.
 check_version()
 {
   local -r what="${1}"
@@ -24,5 +27,5 @@ check_version()
   fi
 }
 
-check_version vitest     5.0 'npx vitest --version'
-check_version typescript 6.0 'npx tsc --version'
+check_version vitest     5.0 '/etc/ts/node_modules/.bin/vitest --version'
+check_version typescript 6.0 '/etc/ts/node_modules/.bin/tsc --version'
